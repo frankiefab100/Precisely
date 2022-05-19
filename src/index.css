@@ -1,0 +1,279 @@
+#root,
+html,
+body {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: linear-gradient(to right, #00578a, #4780e9);
+  color: #fff;
+  font-family: "Futura", sans-serif;
+  font-size: 1rem;
+  text-align: center;
+}
+
+.main {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  height: 100vh;
+}
+
+.logo {
+  margin-left: 80px;
+}
+
+.input-wrapper {
+  display: flex;
+}
+
+.title {
+  color: #fff;
+  font-family: "Merriweather", serif;
+  font-size: 2rem;
+  margin: 0 auto 10px;
+}
+
+.tagline {
+  color: #ddd;
+  font-style: italic;
+  margin: -5px 0 25px;
+}
+
+span {
+  color: #060683;
+}
+
+input {
+  border: none;
+  background-color: #fff;
+  border-radius: 2px;
+  color: #222;
+  outline: none;
+  padding: 10px 0px;
+  width: 100%;
+  height: 20px;
+}
+
+input::placeholder {
+  color: #333;
+  margin-right: 12px;
+}
+
+.button-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 12px;
+}
+
+button {
+  border: none;
+  outline: none;
+  color: #fff;
+  cursor: pointer;
+  font-family: "Open sans", sans-serif;
+  font-weight: 600;
+  text-transform: uppercase;
+  padding: 10px 14px;
+  margin: 0 10px;
+}
+
+.shorten-btn {
+  background-color: #060683;
+}
+
+.qrcode-btn {
+  border: none;
+  outline: none;
+  border: 1px solid #060683;
+  background-color: transparent;
+  padding: 0.5rem 1rem;
+  margin-right: 1rem;
+  color: #fff;
+}
+
+.modal-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  height: 100vh;
+  margin-bottom: 40px;
+}
+
+.modal {
+  position: relative;
+  background-color: #c6e0ef;
+  border-radius: 2px;
+  box-shadow: 2px 4px 8px rgba(0, 0, 0, 0.4);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  /* padding: 25px; */
+  width: 400px;
+  height: 250px;
+}
+
+.close-btn {
+  position: relative;
+  display: flex;
+}
+
+.close-btn button {
+  background-color: transparent;
+  border: none;
+  color: #060683;
+  cursor: pointer;
+  font-weight: bold;
+  position: absolute;
+  top: -40px;
+  left: 130px;
+}
+
+.result {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.result span {
+  color: #060683;
+  cursor: pointer;
+  padding-left: 200px;
+  opacity: 0.65;
+}
+
+.result span:hover {
+  opacity: 1;
+}
+
+.modal-cta {
+  background-color: #060683;
+  text-align: center;
+  margin-top: 60px;
+  width: 50%;
+}
+
+/* --Navbar -- */
+.top-nav {
+  background-color: #4780e9;
+  box-shadow: 2px 4px 4px rgba(0, 0, 0, 0.192);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 1.2rem;
+  height: 70px;
+  width: 100%;
+  position: fixed;
+  z-index: 2;
+}
+
+.hamburger-icon {
+  display: none;
+  position: absolute;
+  color: #fff;
+  cursor: pointer;
+  right: 80px;
+  font-size: 2rem;
+}
+
+ul {
+  display: flex;
+  align-items: center;
+}
+
+ul li {
+  list-style: none;
+  font-size: 1rem;
+  font-weight: 600;
+  letter-spacing: 1.5px;
+  padding: 10px 20px;
+}
+
+ul a {
+  color: #060683;
+  font-size: 1rem;
+  letter-spacing: 2;
+  text-transform: uppercase;
+  text-decoration: none;
+  transition: all 0.3s ease-out;
+}
+
+ul > li:hover {
+  border-bottom: 2px solid #222;
+}
+
+.btn {
+  background-color: #060683;
+  border: none;
+  border-radius: 4px;
+  color: #f6f6f6;
+  cursor: pointer;
+  outline: none;
+  font-size: 1rem;
+  padding: 10px 20px;
+  margin: 0 100px 0 30px;
+  text-align: center;
+  width: 100px;
+  transition: all 0.3s ease-in-out;
+}
+
+.btn:hover {
+  background-color: #3434e9;
+}
+
+/* -- Media Queries-- */
+@media screen and (max-width: 760px) {
+  .top-nav {
+    position: relative;
+    margin-right: 100px;
+  }
+
+  .nav-links {
+    text-align: center;
+  }
+
+  ul li {
+    margin-top: 30px;
+    padding: 20px 100px;
+  }
+
+  .hamburger-icon {
+    display: block;
+    margin-right: -40px;
+  }
+
+  .hamburger-menu {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: -800px;
+    right: 0;
+    height: 80vh;
+    width: 100%;
+    transition: all 0.6s ease;
+  }
+
+  .hamburger-menu.active {
+    background-color: #c6e0ef;
+    top: 51px;
+    opacity: 5;
+    width: 100%;
+    height: 100vh;
+    z-index: 3;
+  }
+
+  .logo {
+    margin-left: 20px;
+  }
+
+  .btn {
+    margin: 30px 0 0;
+  }
+}
