@@ -25,8 +25,12 @@ const ShortenLink = ({ close }) => {
 
         <div className="result">
           <p>{shortenURL} </p>
+
           <CopyToClipboard text={shortenURL} onCopy={() => setCopied(true)}>
-            <span className={copied ? "copied" : null}>
+            <span
+              onClick={() => setShortenURL("")}
+              className={copied ? "copied" : null}
+            >
               <FaRegCopy />
             </span>
           </CopyToClipboard>
